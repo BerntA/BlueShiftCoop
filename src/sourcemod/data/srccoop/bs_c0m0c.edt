@@ -2,47 +2,66 @@
 
 "config"
 {
-	"chapter" "Blue Shift"
-	"nextmap" "bs_c1m0a"
+    "chapter" "Blue Shift"
+    "nextmap" "bs_c1m0a"
+    
+    "voting_skip_to" "bm_c1a0a"
+    
+    "equipment"
+    {
+        "item" "item_weapon_crowbar"
+    }
 
-	"entity"
-	{
-		"modify"
-		{
-			"classname" "logic_auto"
-			"functions"
-			{
-				"delay_output" "OnMapSpawn"
-				"delay_output" "OnNewGame"
-			}
-		}
-	}
-
-	"checkpoint"
-	{
-		"spawn"
-		{
-			"origin"	"0 0 24"
-			"angles"	"0 90 0"
-			"followid"	"train_model"
-		}
-		"traincheckpoint"
-		{
-			"origin"	"2221 6083 -119"
-			"angles"	"0 90 0"
-			"triggerid" "1647860"
-			"output"	"OnTrigger"
-			"bringall" 	"1"
-			"delay" "0.15"
-		}
-		"securitycheckpoint"
-		{
-			"origin"	"2224 6200 -119"
-			"angles"	"0 90 0"
-			"triggerid" "1707186"
-			"output"	"OnEndSequence"
-			"bringall" 	"1"
-			"delay" "0.1"
-		}
-	}
+    "entity"
+    {
+        "modify"
+        {
+            "classname" "logic_auto"
+            "functions"
+            {
+                "delay_output" "OnMapSpawn"
+                "delay_output" "OnNewGame"
+            }
+        }
+        "modify"
+        {
+            "classname" "/^npc_/"
+            "add"
+            {
+                "damagefilter" "__srccoop_damage_filter"
+            }
+        }
+        "delete"
+        {
+            "hammerid" "1647838"
+        }
+    }
+    
+    "checkpoint"
+    {
+        "spawn"
+        {
+            "origin"    "0 0 24"
+            "angles"    "0 90 0"
+            "followid"    "train_model"
+        }
+        "traincheckpoint"
+        {
+            "origin"    "2221 6083 -119"
+            "angles"    "0 90 0"
+            "triggerid" "1647860"
+            "output"    "OnTrigger"
+            "bringall"     "1"
+            "delay" "0.15"
+        }
+        "securitycheckpoint"
+        {
+            "origin"    "2224 6200 -119"
+            "angles"    "0 90 0"
+            "triggerid" "1707186"
+            "output"    "OnEndSequence"
+            "bringall"     "1"
+            "delay" "0.1"
+        }
+    }
 }

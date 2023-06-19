@@ -5,6 +5,15 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c0m0c"
 
+    	"voting_skip_to" "bs_c0m0c"
+
+
+    	"equipment"
+    	{
+        	"item" "item_weapon_crowbar"
+    	}
+
+
 	"entity"
 	{
 		"modify"

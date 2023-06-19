@@ -5,6 +5,12 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c1m0b"
 
+    	"equipment"
+    	{
+        	"item" "item_weapon_crowbar"
+    	}
+
+
 	"entity"
 	{
 		"modify"
