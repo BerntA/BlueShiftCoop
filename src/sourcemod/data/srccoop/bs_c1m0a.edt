@@ -39,6 +39,19 @@
 				}
 			}
 		}
+		
+		"modify"
+		{
+			"classname" "func_button"
+			"targetname" "Calhoun_uniform_btn"
+			"outputs"
+			{
+				"remove"
+				{
+					"target" "Calhoun_uniform"
+				}
+			}
+		}
 	}
 
 	"checkpoint"
@@ -56,15 +69,6 @@
 			"output"	"OnTrigger"
 			"bringall" 	"1"
 			"delay" "0.1"
-		}
-		"elevator"
-		{
-			"origin"	"-433.94 -1271.39 -447"
-			"angles"	"0 180 0"
-			"triggerid" "2991969"
-			"output"	"OnOpen"
-			"bringall" 	"1"
-			"delay" "0.5"
 		}
 	}
 }
