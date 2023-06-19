@@ -1,0 +1,7 @@
+
+"UnlitGeneric"
+{
+	"$baseTexture" "misc\overlay\banner"
+	"$additive" "1"
+	"$translucent" "1"
+}

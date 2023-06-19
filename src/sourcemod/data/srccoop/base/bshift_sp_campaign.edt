@@ -1,0 +1,16 @@
+#base "coop_base_sp_conversion.edt"
+
+"config"
+{
+	"campaign" "Blue Shift"
+	"console"
+	{
+	}
+	"features"
+	{
+		"KEEP_EQUIPMENT" "1"
+	}
+	"entity_base_bshift_sp_campaign"
+	{
+	}
+}

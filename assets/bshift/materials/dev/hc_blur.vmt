@@ -1,0 +1,6 @@
+"Modulate"
+{
+	"$basetexture" "dev/hc_blur"
+	"$translucent" "1"
+	"$additive" "1"
+}

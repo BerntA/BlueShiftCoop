@@ -1,0 +1,29 @@
+#base "base/bshift_sp_campaign.edt"
+
+"config"
+{
+	"chapter" "Blue Shift"
+	"nextmap" "bs_c3m2a"
+
+	"entity"
+	{
+		"modify"
+		{
+			"classname" "logic_auto"
+			"functions"
+			{
+				"delay_output" "OnMapSpawn"
+				"delay_output" "OnNewGame"
+			}
+		}
+	}
+
+	"checkpoint"
+	{
+		"spawn"
+		{
+			"origin" "843.823 1780.22 20.619"
+			"angles" "0 341 0"
+		}
+	}
+}

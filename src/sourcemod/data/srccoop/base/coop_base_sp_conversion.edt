@@ -1,0 +1,346 @@
+// This is the base config for all singleplayer map conversions
+
+#base "coop_base.edt"
+
+"config"
+{
+	"intro_type" "freeze"
+	"features"
+	{
+		"INSTANCE_ITEMS" "1"
+		"STRIP_DEFAULT_EQUIPMENT" "1"
+		"DISABLE_CANISTER_DROPS" "1"
+	}
+	"console"
+	{
+		"mp_falldamage" "1"
+		"bm_multiplayer_fall_protection" "1"
+		"sv_mp_spawneffect_item" "0"
+	}
+	"define"
+	{
+		"outputs_fixup_player_in_target" "1"
+		"outputs_fixup_player_in_parameter" "1"
+		"viewcontrol_allplayers" "1"
+		"clientcommand_allplayers" "1"
+		"speedmod_allplayers" "1"
+		"env_message_allplayers" "1"
+		"env_hudhint_allplayers" "1"
+		"game_text_allplayers" "1"
+		"vital_npcs_invulnerable" "1"
+		"unglitch_looping_sounds" "1"
+		"never_close_areaportals" "1"
+		"fix_reload_triggers" "1"
+	}
+	"entity_base_sp_conversion"
+	{
+		// remove globalnames - prevents entities not spawning due to the map transition system not being in place
+		"modify"
+		{
+			"remove"
+			{
+				"globalname" ""
+			}
+		}
+		// Player targeting dilemma:
+		// !player is generally only useful in singleplayer, as it returns first player by index
+		// !pvsplayer may search by visibility, activator, or use first index as fallback; although this depends on the entity
+		"modify"
+		{
+			"classname" "aiscripted_schedule"
+			"goalent" "!player"
+			"add"
+			{
+				"goalent" "!pvsplayer"
+			}
+		}
+		"modify"
+		{
+			"classname"	"ai_goal_lead"
+			"WaitPointName" "!player"
+			"add"
+			{
+				"WaitPointName" ""
+			}
+		}
+		"modify"
+		{
+			"classname" "env_mortar_launcher"
+			"target" "!player"
+			"add"
+			{
+				"target" "!pvsplayer" 
+			}
+		}
+		// replaces all outputs targeting !player with player
+		#if
+		{
+			"outputs_fixup_player_in_target" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"modify"
+						{
+							"target" "!player"
+							"replace"
+							{
+								"target" "player" // in the IO system, this will target all players, matched by their classname
+							}
+						}
+					}
+				}
+			}
+		}
+		// replaces all outputs where !player is passed as parameter with !pvsplayer
+		#if
+		{
+			"outputs_fixup_player_in_parameter" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"modify"
+						{
+							"parameter" "!player"
+							"replace"
+							{
+								"parameter" "!pvsplayer"
+							}
+						}
+					}
+				}
+			}
+		}
+		// point_viewcontrol normally accepts the activator. In maps made for SP, we want all players to be affected. New input EnableAll has been added for that purpose.
+		#if
+		{
+			"viewcontrol_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"modify"
+						{
+							"input" "Enable"
+							"target"
+							{
+								"classname" "point_viewcontrol"
+							}
+							"replace"
+							{
+								"input" "EnableAll"
+							}
+						}
+					}
+				}
+			}
+		}
+		// player_speedmod normally accepts the activator. In maps made for SP, we want all players to be affected. New input ModifySpeedAll has been added for that purpose.
+		#if
+		{
+			"speedmod_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"modify"
+						{
+							"input" "ModifySpeed"
+							"replace"
+							{
+								"input" "ModifySpeedAll"
+							}
+						}
+					}
+				}
+			}
+		}
+		// point_clientcommand normally accepts the activator. In maps made for SP, we want all players to be affected. New input CommandAll has been added for that purpose.
+		#if
+		{
+			"clientcommand_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"modify"
+						{
+							"input" "Command"
+							"target"
+							{
+								"classname" "point_clientcommand"
+							}
+							"replace"
+							{
+								"input" "CommandAll"
+							}
+						}
+					}
+				}
+			}
+		}
+		// env_message - Show to all
+		#if
+		{
+			"env_message_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"classname" "env_message"
+					"flags"
+					{
+						"spawnflags"
+						{
+							"add" "2"
+						}
+					}
+				}
+			}
+		}
+		// env_hudhint - Show to all
+		#if
+		{
+			"env_hudhint_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"classname" "env_hudhint"
+					"flags"
+					{
+						"spawnflags"
+						{
+							"add" "1"
+						}
+					}
+				}
+			}
+		}
+		// game_text - Show to all
+		#if
+		{
+			"game_text_allplayers" "1"
+			#then
+			{
+				"modify"
+				{
+					"classname" "game_text"
+					"flags"
+					{
+						"spawnflags"
+						{
+							"add" "1"
+						}
+					}
+				}
+			}
+		}
+		// env_screenoverlay shows to all players once activated - remove it until a solution is found
+		"delete"
+		{
+			"classname" "env_screenoverlay"
+		}
+		// we never want player_speedmod to suppress HUD in MP as this hides chat and even the main menu
+		"modify"
+		{
+			"classname" "player_speedmod"
+			"flags"
+			{
+				"spawnflags"
+				{
+					"remove" "2" // Suppress HUD
+				}
+			}
+		}
+		// make vital NPCs invulnerable
+		#if
+		{
+			"vital_npcs_invulnerable" "1"
+			#then
+			{
+				"create"
+				{
+					"targetname" "__srccoop_damage_filter"
+					"classname" "filter_damage_class"
+				}
+				"modify"
+				{
+					"GameEndAlly" "1"
+					"add"
+					{
+						"damagefilter" "__srccoop_damage_filter"
+					}
+				}
+			}
+		}
+		// prevent glitchy looping sounds (doors, rotating platforms)
+		#if
+		{
+			"unglitch_looping_sounds" "1"
+			#then
+			{
+				"modify"
+				{
+					"loopmovesound" "1"
+					"set"
+					{
+						"loopmovesound" "0"
+					}
+				}
+			}
+		}
+		// it's better this way
+		#if
+		{
+			"never_close_areaportals" "1"
+			#then
+			{
+				"modify"
+				{
+					"outputs"
+					{
+						"remove"
+						{
+							"input" "Close"
+							"target"
+							{
+								"classname" "func_areaportal"
+							}
+						}
+					}
+				}
+			}
+		}
+		// finds trigger_once triggers that call the input "Reload",
+		// with player_loadsaved being the exclusive entity with it,
+		// and while asumming they are solely fall-reload triggers, changes them to trigger_multiple.
+		#if
+		{
+			"fix_reload_triggers" "1"
+			#then
+			{
+				"modify"
+				{
+					"classname" "trigger_once"
+					"/^(OnTrigger|OnStartTouch)$/" "/^[^]+Reload/"
+					"set"
+					{
+						"classname" "trigger_multiple"
+					}
+				}
+			}
+		}
+	}
+}

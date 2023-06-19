@@ -1,0 +1,64 @@
+#base "base/bshift_sp_campaign.edt"
+
+"config"
+{
+	"chapter" "Blue Shift"
+	"nextmap" "bs_c1m0b"
+
+	"entity"
+	{
+		"modify"
+		{
+			"classname" "logic_auto"
+			"functions"
+			{
+				"delay_output" "OnMapSpawn"
+				"delay_output" "OnNewGame"
+			}
+		}
+		
+		"modify"
+		{
+			"classname" "item_suit"
+			"targetname" "Suit"
+			"outputs"
+			{
+				"modify"
+				{
+					"output" "OnPlayerPickup"
+					"replace"
+					{
+						"timestofire" "1"
+					}
+				}
+			}
+		}
+	}
+
+	"checkpoint"
+	{
+		"spawn"
+		{
+			"origin" "-736 -24 -120"
+			"angles" "0 0 0"
+		}
+		"securitycheckpoint"
+		{
+			"origin"	"-542.26 -12.68 -119"
+			"angles"	"0 0 0"
+			"triggerid" "3043733"
+			"output"	"OnTrigger"
+			"bringall" 	"1"
+			"delay" "0.1"
+		}
+		"elevator"
+		{
+			"origin"	"-433.94 -1271.39 -447"
+			"angles"	"0 180 0"
+			"triggerid" "2991969"
+			"output"	"OnOpen"
+			"bringall" 	"1"
+			"delay" "0.5"
+		}
+	}
+}

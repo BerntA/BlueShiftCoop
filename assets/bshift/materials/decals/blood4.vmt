@@ -1,0 +1,18 @@
+"DecalModulate"
+{
+	
+	"$basetexture" "Decals/Blood4"
+	"$decal" 1
+	"$decalscale" 0.25
+    	$color "[0.6 0.6 0.6]"
+	$vertexcolor 1
+	$vertexalpha 1
+
+"Proxies"
+   {
+
+
+
+}
+
+

@@ -1,0 +1,44 @@
+// This is the topmost base file
+
+"config"
+{
+	"features"
+	{
+		"FIRSTPERSON_DEATHCAM" "1"
+		"NO_TELEFRAGGING" "1"
+		"NOBLOCK" "1"
+		"SHOW_WELCOME_MESSAGE" "1"
+		"HEV_SOUNDS" "1"
+		"INSTANCE_ITEMS" "0"
+		"INSTANCE_ITEMS_NORESET" "0"
+		"STRIP_DEFAULT_EQUIPMENT" "0"
+		"STRIP_DEFAULT_EQUIPMENT_KEEPSUIT" "0"
+		"DISABLE_CANISTER_DROPS" "0"
+		"AUTODETECT_MAP_END" "1"
+		"CHANGELEVEL_FX" "1"
+		"KEEP_EQUIPMENT" "0"
+		"TRANSFER_PLAYER_STATE" "1"
+	}
+	
+	"console"
+	{
+		// enable flashlight by default
+		"mp_flashlight" "1"
+		
+		// fix for breakmodels not appearing
+		"breakable_multiplayer" "0"
+		
+		// disables statistics, prevents a crash when a player drowns
+		"sv_ranked" "0"
+		
+		// disable warmup intermission pause
+		"mp_warmup_intermission_time" "0"
+
+		// prevents client crash after pvp deaths due to freezecam, shortens respawn time
+		"spec_freeze_time" "0"
+	}
+	
+	"entity_base_coop"
+	{
+	}
+}
