@@ -16,6 +16,15 @@
 				"delay_output" "OnNewGame"
 			}
 		}
+
+		"modify"
+                {
+                    "classname" "/^npc_/"
+                    "add"
+                    {
+                        "damagefilter" "__srccoop_damage_filter"
+                    }
+                }
 	}
 
 	"checkpoint"
