@@ -5,6 +5,19 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c2m0a"
 
+	"equipment"
+	{
+		"lookup"
+		{
+			"targetname" "items_at_start"
+		}
+
+		"item" "item_weapon_crowbar"
+
+		"health" "100"
+		"armor" "60"
+	}
+
 	"entity"
 	{
 		"modify"
@@ -18,13 +31,13 @@
 		}
 
 		"modify"
-                {
-                    "classname" "/^npc_/"
-                    "add"
-                    {
-                        "damagefilter" "__srccoop_damage_filter"
-                    }
-                }
+        {
+            "classname" "/^npc_/"
+            "add"
+            {
+                "damagefilter" "__srccoop_damage_filter"
+            }
+        }
 	}
 
 	"checkpoint"
@@ -33,6 +46,56 @@
 		{
 			"origin" "3846.02 3127.54 136"
 			"angles" "0 180 0"
+		}
+
+		"choreographed"
+		{
+			"origin" "4208 664 80"
+			"angles" "0 165 0"
+			"triggerid" "904071"
+			"output"    "OnTrigger"
+			"portal"	"4450 639 100"
+            "delay" "1.0"
+		}
+
+		"rollupdoor1"
+		{
+			"origin" "3085 1030 80"
+			"angles" "0 165 0"
+			"triggerid" "904101"
+			"output"    "OnTrigger"
+			"portal"	"3260 1020 100"
+            "delay" "4.0"
+		}
+
+		"door3"
+		{
+			"origin" "1850 1800 90"
+			"angles" "0 -130 0"
+			"triggerid" "904384"
+			"output"    "OnTrigger"
+			"portal"	"1856 1685 100"
+            "delay" "1.0"
+		}
+
+		"door2"
+		{
+			"origin" "128 990 -50"
+			"angles" "0 -120 0"
+			"triggerid" "904263"
+			"output"    "OnTrigger"
+			"portal"	"190 1055 -30"
+            "delay" "1.0"
+		}
+
+		"elev"
+		{
+			"origin" "0 -52 -50"
+			"angles" "0 90 0"
+			"triggerid" "4535"
+			"output"    "OnPressed"
+			"bringall"     "1"
+			"delay" "0.1"
 		}
 	}
 }
