@@ -5,6 +5,11 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c2m0b"
 
+	"equipment"
+	{
+		"health" "24"
+	}
+
 	"entity"
 	{
 		"modify"
@@ -16,6 +21,15 @@
 				"delay_output" "OnNewGame"
 			}
 		}
+
+		"modify"
+        {
+            "classname" "/^npc_human_/"
+            "add"
+            {
+                "damagefilter" "__srccoop_damage_filter"
+            }
+        }
 	}
 
 	"checkpoint"
@@ -25,5 +39,54 @@
 			"origin" "-672 159 273"
 			"angles" "0 0 0"
 		}
+
+		"elev_rumble2"
+		{
+			"origin" "170 100 260"
+			"angles" "0 0 0"
+            "triggerid" "1864825"
+            "output"    "OnTrigger"
+		}
+
+		"lab_blowdoor"
+        {
+            "origin" "3715 1080 300"
+            "angles" "0 90 0"
+            "triggerid" "2586785"
+            "output"    "OnTrigger"
+            "portal"	"3712 990 280"
+            "delay" "1.0"
+        }
+
+		"exitdoor01"
+        {
+            "origin" "2528 648 210"
+            "angles" "0 90 0"
+            "triggerid" "5659834"
+            "output"    "OnTrigger"
+            "bringall"     "1"
+            "delay" "1.0"
+        }
+
+        "hideout"
+        {
+            "origin" "3410 3090 560"
+            "angles" "0 25 0"
+            "triggerid" "2633559"
+            "output"    "OnTrigger"
+            "bringall"     "1"
+            "delay" "4.0"
+        }
+
+        "grd01"
+        {
+            "origin" "4705 2250 270"
+            "angles" "0 -175 0"
+            "triggerid" "3664406"
+            "output"    "OnTrigger"
+            "bringall"     "1"
+            "delay" "1.0"
+        }
 	}
 }
+
