@@ -5,6 +5,19 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c1m0c"
 
+	"equipment"
+    {
+		"lookup"
+		{
+			"targetname" "items_at_start"
+		}
+
+        "item" "item_weapon_crowbar"
+
+		"health" "100"
+		"armor" "60"
+    }
+
 	"entity"
 	{
 		"modify"
@@ -24,6 +37,16 @@
 		{
 			"origin" "-16 -704.46 7.72644"
 			"angles" "0 180 0"
+		}
+
+		"airlock"
+		{
+			"origin" "-1008 864 150"
+			"angles" "0 90 0"
+			"triggerid" "1540526"
+			"output"    "OnTrigger"
+			"portal"     "-1008 709 190"
+            "delay" "1.0"
 		}
 	}
 }
