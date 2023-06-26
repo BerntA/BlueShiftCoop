@@ -5,10 +5,10 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c1m0b"
 
-    	"equipment"
-    	{
-        	"item" "item_weapon_crowbar"
-    	}
+		"equipment"
+		{
+			"item" "item_weapon_crowbar"
+		}
 
 
 	"entity"
@@ -51,6 +51,11 @@
 					"target" "Calhoun_uniform"
 				}
 			}
+		}
+
+		"delete"
+		{
+			"targetname" "clearwpn_4evaaaa"
 		}
 	}
 
