@@ -16,6 +16,15 @@
 				"delay_output" "OnNewGame"
 			}
 		}
+
+		"modify"
+		{
+			"classname" "dc_canal_maintguy"
+			"add"
+			{
+				"damagefilter" "__srccoop_damage_filter"
+			}
+		}
 	}
 
 	"checkpoint"

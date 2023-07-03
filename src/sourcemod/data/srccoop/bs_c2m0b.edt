@@ -5,6 +5,14 @@
 	"chapter" "Blue Shift"
 	"nextmap" "bs_c2m0c"
 
+	"equipment"
+	{
+		"lookup"
+		{
+			"targetname" "/^(suit|weapons)$/"
+		}
+	}
+
 	"entity"
 	{
 		"modify"
@@ -25,5 +33,60 @@
 			"origin" "-1176 623 137"
 			"angles" "0 0 0"
 		}
+
+		"forkydoor1"
+		{
+			"origin" "-425 0 140"
+			"angles" "0 0 0"
+			"triggerid" "3100540"
+			"output"	"OnTrigger"
+			"portal"	 "-585 55 165"
+			"delay" "0.5"
+		}
+
+		"autosave1"
+		{
+			"origin" "200 250 140"
+			"angles" "0 0 0"
+			"triggerid" "1837605"
+			"output"	"OnTrigger"
+		}
+
+		"autosave2"
+		{
+			"origin" "548 -2056 140"
+			"angles" "0 -90 0"
+			"triggerid" "2046022"
+			"output"	"OnTrigger"
+			"portal"	 "550 -850 160"
+			"delay" "0.1"
+		}
+
+		"tunnels_door2"
+		{
+			"origin" "1500 -2672 140"
+			"angles" "0 0 0"
+			"triggerid" "2144954"
+			"output"	"OnTrigger"
+			"portal"	 "1400 -2672 160"
+			"delay" "1.0"
+		}
+
+		"autosave3"
+		{
+			"origin" "2688 -3136 500"
+			"angles" "0 -90 0"
+			"triggerid" "2768869"
+			"output"	"OnTrigger"
+		}
+
+		"autosave4"
+		{
+			"origin" "2992 -3284 500"
+			"angles" "0 0 0"
+			"triggerid" "1884074"
+			"output"	"OnTrigger"
+		}
+
 	}
 }

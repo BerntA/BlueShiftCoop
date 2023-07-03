@@ -27,7 +27,7 @@
 
 		"modify"
 		{
-			"classname" "/^npc_/"
+			"classname" "npc_human_scientist_female"
 			"add"
 			{
 				"damagefilter" "__srccoop_damage_filter"
