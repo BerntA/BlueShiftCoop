@@ -3,14 +3,14 @@
 "config"
 {
 	"chapter" "Blue Shift"
-	"nextmap" "bs_c2m0c"
+	"nextmap" "bs_c1m0c"
 
 	"equipment"
 	{
-		"lookup"
-		{
-			"targetname" "/^(suit|weapons)$/"
-		}
+		"item" "item_weapon_crowbar"
+
+		"health" "100"
+		"armor" "60"
 	}
 
 	"entity"
@@ -30,63 +30,38 @@
 	{
 		"spawn"
 		{
-			"origin" "-1176 623 137"
-			"angles" "0 0 0"
+			"origin" "-16 -704.46 7.72644"
+			"angles" "0 180 0"
 		}
 
-		"forkydoor1"
+		"airlock"
 		{
-			"origin" "-425 0 140"
-			"angles" "0 0 0"
-			"triggerid" "3100540"
+			"origin" "-1008 864 150"
+			"angles" "0 90 0"
+			"triggerid" "1540526"
 			"output"	"OnTrigger"
-			"portal"	 "-585 55 165"
-			"delay" "0.5"
-		}
-
-		"autosave1"
-		{
-			"origin" "200 250 140"
-			"angles" "0 0 0"
-			"triggerid" "1837605"
-			"output"	"OnTrigger"
-		}
-
-		"autosave2"
-		{
-			"origin" "548 -2056 140"
-			"angles" "0 -90 0"
-			"triggerid" "2046022"
-			"output"	"OnTrigger"
-			"portal"	 "550 -850 160"
-			"delay" "0.1"
-		}
-
-		"tunnels_door2"
-		{
-			"origin" "1500 -2672 140"
-			"angles" "0 0 0"
-			"triggerid" "2144954"
-			"output"	"OnTrigger"
-			"portal"	 "1400 -2672 160"
+			"portal"	 "-1008 709 190"
 			"delay" "1.0"
 		}
 
-		"autosave3"
+		"prop_door1"
 		{
-			"origin" "2688 -3136 500"
-			"angles" "0 -90 0"
-			"triggerid" "2768869"
+			"origin" "-2600 2940 -130"
+			"angles" "0 180 0"
+			"triggerid" "2064292"
 			"output"	"OnTrigger"
+			"portal"	 "-2475 2940 -110"
+			"delay" "0.5"
 		}
 
-		"autosave4"
+		"gates"
 		{
-			"origin" "2992 -3284 500"
-			"angles" "0 0 0"
-			"triggerid" "1884074"
-			"output"	"OnTrigger"
+			"origin" "-3420 3275 -130"
+			"angles" "0 -180 0"
+			"triggerid" "1157589"
+			"output"	"OnClose"
+			"portal"	 "-2790 3260 -110"
+			"delay" "0.1"
 		}
-
 	}
 }
