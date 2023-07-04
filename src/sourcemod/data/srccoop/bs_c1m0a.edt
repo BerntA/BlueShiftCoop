@@ -22,7 +22,7 @@
 				"delay_output" "OnNewGame"
 			}
 		}
-		
+
 		"modify"
 		{
 			"classname" "item_suit"
@@ -39,7 +39,7 @@
 				}
 			}
 		}
-		
+
 		"modify"
 		{
 			"classname" "func_button"
@@ -66,6 +66,7 @@
 			"origin" "-736 -24 -120"
 			"angles" "0 0 0"
 		}
+
 		"securitycheckpoint"
 		{
 			"origin"	"-542.26 -12.68 -119"
@@ -73,6 +74,16 @@
 			"triggerid" "3043733"
 			"output"	"OnTrigger"
 			"bringall" 	"1"
+			"delay" "0.1"
+		}
+
+		"labs_doors_vol"
+		{
+			"origin"	"-1260 80 -380"
+			"angles"	"0 180 0"
+			"triggerid" "4038248"
+			"output"	"OnTrigger"
+			"portal"	 "-1170 80 -350"
 			"delay" "0.1"
 		}
 	}
