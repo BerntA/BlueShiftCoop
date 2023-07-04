@@ -50,17 +50,17 @@
 			"angles" "0 180 0"
 			"triggerid" "2064292"
 			"output"	"OnTrigger"
-			"portal"	 "-2475 2940 -110"
+			"portal"	 "-2475 2940 -100"
 			"delay" "0.5"
 		}
 
 		"gates"
 		{
-			"origin" "-3420 3275 -130"
+			"origin" "-3600 3456 -130"
 			"angles" "0 -180 0"
 			"triggerid" "1157589"
 			"output"	"OnClose"
-			"portal"	 "-2790 3260 -110"
+			"bringall"	 "1"
 			"delay" "0.1"
 		}
 	}
