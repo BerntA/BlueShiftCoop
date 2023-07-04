@@ -43,6 +43,16 @@
 			"angles" "0 180 0"
 		}
 
+		"sec_g_door"
+		{
+			"origin" "3524 2624 140"
+			"angles" "0 0 0"
+			"triggerid" "1919167"
+			"output"	"OnTrigger"
+			"portal"	"3456 2890 160"
+			"delay" "0.1"
+		}
+
 		"choreographed"
 		{
 			"origin" "4208 664 80"
