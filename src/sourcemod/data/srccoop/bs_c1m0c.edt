@@ -33,6 +33,29 @@
 				"damagefilter" "__srccoop_damage_filter"
 			}
 		}
+		
+		"add"
+		{
+			"classname" "point_servercommand"
+			"targetname" "inci_finale_server_cmd"
+		}
+		
+		"modify"
+		{
+			"classname" "logic_relay"
+			"targetname" "inci_finale_rel"
+			"outputs"
+			{
+				"add"
+				{
+					"output"	"OnTrigger"
+					"target"	"inci_finale_server_cmd"
+					"input"		"Command"
+					"parameter" "changelevel bs_c2m0a"
+					"delay" 	"12"
+				}
+			}
+		}
 	}
 
 	"checkpoint"
